@@ -1,11 +1,11 @@
 Introduction
 ============
 
-Credits go to 
+Credits go to Edward-Wu's srt-server implemetation
 
 Added string token system in url
 
-for example
+for example:
 
 srt://[your.sls.ip]:[port]]?streamid=[streamid]/[application]/[stream_name][token=<your generate token>]
 if the token parameter is presented, the on_event url will include this token in order for you to validate it in your own system.
