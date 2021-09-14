@@ -389,7 +389,7 @@ int CSLSListener::handler()
     }
 
 
-    //2552 BV Token system for GOair
+    //2552 BV Token system // use to push -> ?token=
     string findToken ("token=");
     string s;
     string token;
@@ -434,9 +434,6 @@ int CSLSListener::handler()
     app_uplive = m_map_publisher->get_uplive(key_app);
     if (app_uplive.length() > 0)
     {
-
-        //sls_log(SLS_LOG_INFO, "-------------------------------------, [%s", stream_name);
-
         sprintf(key_stream_name, "%s/%s", app_uplive.c_str(), stream_name);
         CSLSRole * pub = m_map_publisher->get_publisher(key_stream_name);
         if (NULL == pub) {
@@ -509,6 +506,8 @@ int CSLSListener::handler()
 	    std::string stat_info = std::string(tmp);
 	    player->set_stat_info_base(stat_info);
 	    player->set_http_url(m_http_url_role);
+
+        //added this feature in order to provide tokens on client -> SLSRole.cpp
 	    player->on_connect(tokenPointer);
 
 		m_list_role->push(player);

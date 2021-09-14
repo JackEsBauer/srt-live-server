@@ -614,7 +614,7 @@ int  CSLSRole::on_connect(const char *token)
     //2552 BV added token system
     if(strlen(token) == 0) 
     {
-        sls_log(SLS_LOG_INFO, "CSLSRole::onConnect:: => There is no token ");
+        // sls_log(SLS_LOG_INFO, "CSLSRole::onConnect:: => There is no token ");
         sprintf(on_event_url, "%s?on_event=on_connect&role_name=%s&srt_url=%s&remote_ip=%s&remote_port=%d", m_http_url, m_role_name, get_streamid(), m_peer_ip, m_peer_port);
     }
     else{
